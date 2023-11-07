@@ -1,0 +1,117 @@
+{% extends "users/base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'users/css/register.css' %}">
+<style>
+    /* Add custom CSS to style the form fields */
+    .form-ul {
+        list-style: none;
+        padding: 0;
+        font-family: cursive;
+    }
+
+    .form-ul li {
+        margin-bottom: 10px; /* Add space between list items (form fields) */
+    }
+    
+    .form-ul label {
+        display: block; /* Display labels on a new line */
+    }
+    
+    .form-ul input[type="text"] {
+        width: 100%; /* Set input width to 100% for full width */
+    }
+</style>
+<div class="container-fluid" style="font-family: cursive;">
+    <div class="row" >
+        <div class="col-md-6 img-container">
+            <img src="{% static 'users/img/i3.jpeg' %}" class="img-fluid" alt="Image" >
+        </div>
+        <div class="col-md-6">
+            <div class="content-section">
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Join Today</legend>
+                        <ul class="form-ul">
+                        {{ userForm.as_p }}
+                        {{ donorForm.as_p }}</ul>
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                    </div>
+                </form>
+                <div class="border-top pt-3">
+                    <small class="text-muted">
+                        Already Have An Account? <a class="ml-2" href="{% url 'login_users' %}">Sign In</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+<!-- 
+{% load static %}
+<head>
+<link rel="stylesheet" href="{% static 'users/css/register.css' %}">
+</head>
+<body>
+<div>
+<nav>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <div class="logo">
+        <div class="icon">
+        <i class="fa-solid fa-droplet"></i>
+        <i class="fa-solid fa-droplet"></i>
+        <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="name-border">
+          <a href="/home">
+            <span class="name">BloodBanks Management</span></a>
+        </div>
+    </div>
+    <ul class="nav-links">
+      
+        <li><i class="fa-solid fa-building"></i><a href="{% url 'login_b'%}">Blood Bank Login</a></li>
+        <li> <i class="fa-solid fa-building"></i> <a href="{% url 'blood_bank_register' %}">Blood Bank Register</a></li>
+        <li> <i class="fa-solid fa-user"></i> <a href="{% url 'login_users' %}">User Login</a></li>
+        <li> <i class="fa-solid fa-user"></i> <a href="{% url 'register_user' %}">User Register</a></li>
+    </ul>
+</nav>
+</div>   
+<div class="main">
+<div class="centered-box">
+    <div class="left-side">
+        <img src="{% static 'users/img/i1.jpg' %}" style="height: 100%;" class="img-fluid" alt="Image">
+    </div>
+    <div class="right-side">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Today</legend>
+                <ul class="form-ul">
+                    {{ userForm.as_p }} {# Render userForm fields in paragraphs #}
+                </ul>
+                <ul class="form-ul"> {# Add a custom class to the ul element #}
+                    {{ donorForm.as_ul }} {# Render donorForm fields as an unordered list #}
+                </ul>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already Have An Account? <a class="ml-2" href="{% url 'login_users' %}">Sign In</a>
+            </small>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+</body> -->

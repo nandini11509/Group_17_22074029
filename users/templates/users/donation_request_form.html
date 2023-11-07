@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Donation Request Form</title>
+    <link rel="stylesheet" href="{% static 'users/css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'users/css/donation_request.css' %}">
+</head>
+<body>
+    <div class="navbar">
+        <nav>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <div class="logo">
+                <span style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776; </span>
+                <div class="icon">
+                <i class="fa-solid fa-droplet"></i>
+                <i class="fa-solid fa-droplet"></i>
+                <i class="fa-solid fa-droplet"></i>
+                </div>
+                <div class="name-border">
+                  <a href="/home" style="text-decoration: none;">
+                    <span class="name" >BloodBanks Management</span></a>
+                </div>
+            </div>
+            <ul class="nav-links">
+              
+                
+                <li> <i class="fa-solid fa-user"></i> <a href="/users/logout">Logout</a></li>
+            </ul>
+        </nav>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="{% url 'profile_user' %}">Profile</a>
+        <a href="{% url 'create_donation_request' %}">Donate Blood</a>
+        <a href="{% url 'submit_blood_request' %}">Request Blood</a>
+        <a href="{% url 'user_past_requests' %}">Users Past Blood Requests</a>
+    </div>
+    <!-- <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span> -->
+<div class="body-div">
+    <h1>Gift of Life! Donate Blood!</h1>
+    <form method="post" action="{% url 'create_donation_request' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit Donation Request</button>
+    </form>
+</div>
+</body>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
+</html>

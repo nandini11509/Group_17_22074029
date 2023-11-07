@@ -1,0 +1,171 @@
+/* body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    background-image: url('../users/img/i12.jpg');
+    background-size: cover;
+} */
+body{
+    background-color: #FCFFE3;
+    font-family: cursive;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(217,96,118,0.7);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.container {
+    margin-left: 250px;
+    background-color: rgb(217,96,118,0.4);
+    width: 60%;
+    border-radius: 5px;
+    padding: 20px;
+    /* box-shadow: 8px 8px 15px #ffffff, -8px -8px 15px  #ffffff; */
+}
+
+.top h1 {
+    text-align: center;
+    color: #d96076; /* Dark green text */
+}
+
+.top ul {
+    list-style-type: none;
+    padding: 0;
+}
+.name{
+    text-decoration: none;
+}
+.top li {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    /* box-shadow: 5px 5px 10px #ffffff, 
+                -5px -5px 10px #ffffff; */
+    background-color: rgb(217,96,118,0.5); /* Sea green background */
+}
+
+.top strong {
+    color: black;
+}
+
+.top p {
+    text-align: center;
+    color:black;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+    .container {
+        max-width: 95%;
+        padding: 15px;
+    }
+}
+
+    
+    @media screen and (max-width: 768px) {
+        .container {
+            max-width: 90%;
+        }
+        .sidenav {
+            padding-top: 15px;
+        }
+        .sidenav a {
+            font-size: 18px;
+        }
+    }
+
+    .name{
+        font-family: cursive; /* Font family */
+        font-size: 24px; /* Font size */
+        color: #fff; /* Text color */
+        text-transform: uppercase; /* Uppercase text */
+        color:#D96076;
+    }
+    .name-border{
+        /* Background color for the logo container */
+        padding: 10px; /* Padding around the logo */
+        text-align: center;
+        text-decoration: none;
+    }
+    .navbar{
+        background-color: #FCFFE3;
+    }
+    nav {
+        background:#FCFFE3;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 0 20px;
+        font-family: 'Copperplate';
+        color: #D96076;
+        
+    }
+    .icon{
+        margin-right: 10px;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+        color: #D96076;
+    }
+    
+    .logo img {
+        max-width: 50px; /* Set the width of your logo */
+        margin-right: 10px;
+    }
+    
+    .nav-links {
+        list-style: none;
+        display: flex;
+        
+    }
+    .nav-links:hover{
+        text-decoration: underline;
+    }
+    .nav-links li {
+        margin: 0 15px;
+    }
+    
+    .nav-links a {
+        color:#D96076;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    

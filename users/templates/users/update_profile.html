@@ -1,0 +1,26 @@
+{% extends "users/base3.html" %}
+{% load static %}
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'users/css/register.css' %}">
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{% static 'users/img/update_profile.jpg' %}" class="img-fluid" alt="Image" style="width: 100%;">
+        </div>
+        <div class="col-md-6">
+            <div class="content-section">
+                <h2>Update Profile</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="form-group" style="width: 100%; display: flex; justify-content: center;">
+                        <button type="submit" class="btn btn-primary" style="width: 150px;">Update Profile</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

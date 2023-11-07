@@ -1,0 +1,91 @@
+
+
+
+.name{
+    font-family: "Arial", sans-serif; /* Font family */
+    font-size: 24px; /* Font size */
+    color: #fff; /* Text color */
+    text-transform: uppercase; /* Uppercase text */
+    color:#D96076;
+}
+.name-border{
+    /* Background color for the logo container */
+    padding: 10px; /* Padding around the logo */
+    text-align: center;
+}
+.navbar{
+    background-color: #FCFFE3;
+}
+nav {
+    background:#FCFFE3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-family: 'Copperplate';
+    color: #D96076;
+    
+}
+.icon{
+    margin-right: 10px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    color: #D96076;
+}
+
+.logo img {
+    max-width: 50px; /* Set the width of your logo */
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    
+}
+.nav-links:hover{
+    text-decoration: underline;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color:#D96076;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: space-around;
+    
+    padding: 10px;
+    height: 200px;
+}
+
+.icon-item {
+    text-align: center;
+   
+}
+.icon-item img{
+    height:100px;
+}
+.icon-item i {
+    font-size: 24px;
+}
+
+.icon-item span {
+    font-size: 14px;
+}

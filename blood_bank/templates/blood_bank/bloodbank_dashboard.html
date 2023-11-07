@@ -1,0 +1,61 @@
+
+{% extends 'blood_bank/base3.html' %}
+{% block content %}
+    
+
+</head>
+<body>
+    <header>
+        <h3></h3>
+    </header>
+    <main>
+        <div style="display: flex;justify-content: center;">
+        <h3 style="color: #d96076;font-family: cursive;">Current Blood Availabilty Status</h3></div>
+        <div class="container">
+            <div class="row1">
+                <div class="column1">
+                  <!-- Content for the first column of the first row goes here -->
+                  <i class="fa-solid fa-droplet"></i>
+            <h3>A+ : {{blood_inventory.0.quantity}}</h3>
+                </div>
+                <div class="column1">
+                  <!-- Content for the second column of the first row goes here -->
+                  <i class="fa-solid fa-droplet"></i>
+            <h3>A- : {{blood_inventory.1.quantity}}</h3>
+                </div>
+                <div class="column1">
+                  <!-- Content for the third column of the first row goes here -->
+                  <i class="fa-solid fa-droplet"></i>
+            <h3>B+ : {{blood_inventory.2.quantity}}</h3>
+                </div>
+                <div class="column1">
+                    <!-- Content for the third column of the first row goes here -->
+                    <i class="fa-solid fa-droplet"></i>
+            <h3>B- : {{blood_inventory.3.quantity}}</h3>
+                  </div>
+            </div>
+            <div class="row1">
+                <div class="column1">
+                    <!-- Content for the third column of the first row goes here -->
+                    <i class="fa-solid fa-droplet"></i>
+            <h3>AB+ : {{blood_inventory.4.quantity}}</h3>
+                  </div>
+                <div class="column1">
+                  <!-- Content for the first column of the second row goes here -->
+                  <i class="fa-solid fa-droplet"></i>
+            <h3>AB- : {{blood_inventory.5.quantity}}</h3>
+                </div>
+                <div class="column1">
+                  <!-- Content for the second column of the second row goes here -->
+                  <i class="fa-solid fa-droplet"></i>
+            <h3>O+ : {{blood_inventory.6.quantity}}</h3>
+                </div>
+                <div class="column1">
+                    <!-- Content for the third column of the first row goes here -->
+                    <i class="fa-solid fa-droplet"></i>
+            <h3>O- : {{blood_inventory.7.quantity}}</h3>
+                  </div>
+            </div>
+        </div>
+    </main>
+{% endblock content %}

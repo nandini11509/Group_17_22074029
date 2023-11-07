@@ -1,0 +1,35 @@
+{% extends "users/base2.html" %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'blood_bank/css/success.css' %}">
+    <div class="container">
+        <div class="success-content">
+            <div class="success-header">
+                <div class="text-center">
+                    <img src="{% static 'users/img/precautions.jpeg' %}" alt="Success Image">
+                    <div class="quote">
+                        <p>"Your gift of blood saves lives."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="success-details">
+                <div class="text-center">
+                    <h2>Your Request has been accepted!!</h2>
+                </div>
+                <h1>Your Blood Request</h1>
+    <p>ID: {{ blood_request.id }}</p>
+    <p>User: {{ blood_request.user }}</p>
+    <p>Blood Bank: {{ blood_request.blood_bank }}</p>
+    <p>Blood Group: {{ blood_request.blood_group }}</p>
+    <p>Quantity: {{ blood_request.quantity }}</p>
+    <p>Cost: {{cost}}</p>
+    <p>Status: {{ blood_request.status }}</p>
+    <p>You can use your credits to avail the discounts... </p>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+    
+

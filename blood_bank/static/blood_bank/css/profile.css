@@ -1,0 +1,23 @@
+.center-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+    /* color: #D96076; */
+}
+p ,h1{
+    color: black;
+}
+.profile-box {
+    /* margin-top: 100px; */
+    text-align: center;
+    max-width: 400px; /* Adjust the width as needed */
+    padding: 20px;
+    border: 1px solid #ccc; /* Add a border around the box */
+    background-color: rgb(217,96,118,0.5) ;/* Set a background color */
+    border-radius: 10px; /* Add rounded corners */
+}
+
+.buttons {
+    margin-top: 20px; /* Add space between profile information and buttons */
+}

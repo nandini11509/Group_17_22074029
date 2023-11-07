@@ -1,0 +1,26 @@
+
+{% extends 'blood_bank/base1.html' %}
+{% block content %}
+    <div class="container" style="background-color: (217,96,118,0.5);" >
+        <h2 style="color:#D96076;">Your Donation Requests:</h2>
+        <ul>
+            <form method="post" >
+                {% csrf_token %}
+                {% for request in donation_requests %}
+                    {% if request.status == "Pending" %}
+                        <li>
+                            <strong>Request Date:</strong> {{request.user}} {{ request.request_date }}<br>
+                            <strong>Blood Group:</strong> {{ request.blood_group }}<br>
+                            <strong>Additional Info:</strong> {{ request.additional_info }}<br>
+                            <strong>Status:</strong> {{ request.status }}<br>
+                            <input type="hidden" name="request_id" value="{{ request.id }}">
+                            <button type="submit" name="action" value="accept">Accept</button>
+                            <button type="submit" name="action" value="reject">Reject</button>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </form>
+        </ul>
+    </div>
+{% endblock content %}
+

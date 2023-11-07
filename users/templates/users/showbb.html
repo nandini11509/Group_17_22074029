@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/css/showbb.css' %}">
+    <title>Blood Banks</title>
+</head>
+<body>
+    <nav>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <div class="logo">
+            <div class="icon">
+            <i class="fa-solid fa-droplet"></i>
+            <i class="fa-solid fa-droplet"></i>
+            <i class="fa-solid fa-droplet"></i>
+            </div>
+            <div class="name-border">
+              <a href="/home">
+                <span class="name">BloodBanks Management</span></a>
+            </div>
+        </div>
+    </nav>
+    <h1>List of Blood Banks</h1>
+    <form method="GET" action="{% url 'show_blood_banks' %}">
+        <input type="text" name="City" placeholder="Enter city">
+        <!-- <button class="btn btn-outline-info" type="submit">Search</button> -->
+        <button class="btn btn-outline-info" type="submit">Search</button>
+    </form>
+
+    {% if blood_banks %}
+        <h2>Blood Banks in {{ blood_banks.0.City }}</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Blood Bank Name</th>
+                    <th>City</th>
+                    <th>Blood Group</th>
+                    <th>Available Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for blood_bank_detail in blood_bank_details %}
+                        {% if blood_bank_detail.inventory %}
+                            {% for inventory_item in blood_bank_detail.inventory %}
+                                {% if inventory_item.quantity > 0 %}
+                                    <tr>    
+                                        <td>{{ blood_bank_detail.blood_bank.bloodbankName }}</td>
+                                        <td>{{ blood_bank_detail.blood_bank.City }}</td>
+                                        <td>{{ inventory_item.get_blood_group_display }}</td>
+                                            <td>{{ inventory_item.quantity }}</td>
+                                        {% endif %}
+                                    </tr>
+                            {% endfor %}
+                        {% else %}
+                            <td colspan="2">No data available</td>
+                        {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+
+    {% else %}
+        <div class="text-center">
+            No blood banks found.
+        </div>
+    {% endif%}
+</body>
+</html>

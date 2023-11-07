@@ -1,0 +1,38 @@
+{% extends "users/base2.html" %}
+
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row align-items-center" style="height: 100vh;">
+        <div class="col-md-6">
+            <img src="{% static 'users/img/i5.jpeg' %}" class="img-fluid" alt="Image">
+        </div>
+        <div class="col-md-6">
+            <div class="content-section neumorphism-style" style="margin-top: 10%;">
+                <form method="POST" class="login-form neumorphism-style-form">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4 login-header neumorphism-style-header">Login</legend>
+                        <div class="form-group">
+                            {{ form.username.label_tag }}
+                            {{ form.username }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.password.label_tag }}
+                            {{ form.password }}
+                        </div>
+                    </fieldset>
+                    <div class="form-group neumorphism-style-btn">
+                        <button class="btn btn-outline-info login-btn" type="submit">Sign In</button>
+                    </div>
+                </form>
+                <div class="border-top pt-3 neumorphism-style-small-text">
+                    <small class="text-muted">
+                        Don't have an account? <a class="ml-2 signup-link" href="{% url 'register_user' %}">Sign Up</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

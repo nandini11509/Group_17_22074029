@@ -1,0 +1,110 @@
+.body-div {
+    font-family: cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #FCFFE3;
+}
+
+form {
+    /* display:flex; */
+    background-color:  rgb(217,96,118,0.5);
+    width: 40%;
+    border-radius: 5px;
+    padding: 20px;
+    /* box-shadow: 8px 8px 15px #a6a6a6, -8px -8px 15px #a6a6a6; */
+    
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 6px;
+}
+
+button[type="submit"] {
+    background-color: #d66f82;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    /* margin-left:25px; */
+    display:block;
+}
+
+button[type="submit"]:hover {
+    background-color: #D96076;
+}
+
+label {
+    color: black;
+    margin-top: 10px;
+    display: block;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 6px;
+}
+
+option {
+    color: #555;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #D96076;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(217,96,118,0.7);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}

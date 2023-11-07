@@ -1,0 +1,49 @@
+{% extends 'blood_bank/base1.html' %}
+{% load static %}
+{% block content %}
+    <!-- <h1>Update BloodBank Information</h1>
+    <form method="post">
+        {% csrf_token %}
+        <fieldset>
+            <ul class="form-ul">
+                {{ form.as_p }}
+            </ul>
+        </fieldset>
+        <input type="submit" value="Update">
+    </form> -->
+    <div class="body-top">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-6">
+                    <!-- Photo or Image -->
+                    <img src="{% static 'blood_bank/img/blood_availability.jpeg' %}" class="img-fluid" alt="Image">
+                </div>
+                <div class="col-md-6">
+                    <!-- Registration Form -->
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <fieldset>
+                            <legend>Update BloodBank Profile</legend>
+                            <ul class="form-ul">
+                                {{ form.as_p }}
+                            </ul>
+                        </fieldset>
+                <div class="text-center">
+                            <button type="submit" class="btn btn-primary" value="Update">Update</button>
+                        </div>
+                    </form>
+                    <div class="text-center">
+                        <small>
+                     <a href="{% url 'profile_b' %}">Go Back</a>
+                        </small>
+                    </div>
+                    <div>
+                        {% if messages %}
+                            {{ messages }}
+                        {% endif %}
+                    </div>
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

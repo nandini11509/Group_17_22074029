@@ -1,0 +1,40 @@
+{% extends "blood_bank/base.html" %}
+{% block content %}
+{% load static %}
+<div class="body-top">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-6">
+                <!-- Photo or Image -->
+                <img src="{% static 'blood_bank/img/blood_availability.jpeg' %}" class="img-fluid" alt="Image">
+            </div>
+            <div class="col-md-6">
+                <!-- Registration Form -->
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <fieldset>
+                        <legend>Registration form for blood bank</legend>
+                        <ul class="form-ul">
+                            {{ bbuserForm.as_p }}
+                            {{ bbForm.as_p }}
+                        </ul>
+                    </fieldset>
+            <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </div>
+                </form>
+                <div class="text-center">
+                    <small>
+                        Already have an account? <a href="{% url 'login_b' %}">Sign In</a>
+                    </small>
+                </div>
+                <div>
+                    {% if messages %}
+                        {{ messages }}
+                    {% endif %}
+                </div>
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

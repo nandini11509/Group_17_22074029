@@ -1,0 +1,52 @@
+.row{
+    width:100%;
+}
+.img-fluid{
+height:100%;
+width: 100%;
+}
+.container-fluid{
+    background-image: url('../users/img/i12.jpg');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    /* opacity: 2; */
+}
+@media (max-width: 768px) {
+    .img-container {
+        display: none;
+    }
+    .col-md-6 {
+        width: 100%;
+    }
+    .container-fluid{
+        background-image: url('../img/i12.avif');
+        background-size: cover; 
+        background-position: center;
+        background-repeat: no-repeat;
+        /* opacity: 2; */
+    }
+}
+.form-ul {
+    list-style: none;
+    padding: 0;
+    font-family: cursive;
+}
+
+.form-ul li {
+    margin-bottom: 10px; /* Add space between list items (form fields) */
+}
+
+.form-ul label {
+    display: block; /* Display labels on a new line */
+}
+
+.form-ul input[type="text"] {
+    width: 100%; /* Set input width to 100% for full width */
+}
+.body-top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}

@@ -1,0 +1,14 @@
+{% extends "users/base1.html" %}
+{% block content %}
+<div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0 auto;">
+    <div style="width: 40%; text-align: center;">
+        <h2 style="font-size: 24px; margin-bottom: 20px;">Delete Account</h2>
+        <p style="font-size: 16px; margin-bottom: 30px;">Are you sure you want to delete your account?</p>
+        <form method="post" style="display: flex; justify-content: center; margin-bottom: 20px;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger" style="padding: 10px 20px; border: none; border-radius: 10px; cursor: pointer; background-color: #f44336; color: white; box-shadow: 6px 6px 12px #d9d9d9, -6px -6px 12px #ffffff; margin-right: 20px;">Delete Account</button>
+            <a href="{% url 'profile_user' %}"  class="btn btn-secondary" style="padding: 10px 20px; border: none; border-radius: 10px; cursor: pointer; background-color: #f0f0f0; color: #555; box-shadow: 6px 6px 12px #d9d9d9, -6px -6px 12px #ffffff; text-decoration: none;">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock content %}

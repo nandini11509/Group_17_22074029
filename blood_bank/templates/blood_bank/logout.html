@@ -1,0 +1,34 @@
+
+{% extends "blood_bank/base2.html" %}
+{% block content %}
+<style>
+  /* Center the div horizontally and vertically */
+  .center-div {
+      display: flex;
+      justify-content: center; /* Centers horizontally */
+      align-items: center; /* Centers vertically */
+      height: 50vh; /* Makes sure the div takes up the entire viewport height */
+  }
+  h2,p,a{
+    font-family: cursive; 
+    color: #D96076; 
+    margin-bottom: 20px;
+  }
+  a:hover{
+    color: #D96076; 
+    text-decoration: underline;
+  }
+</style>
+<div class="center-div">
+  <div class="container text-center">
+    <h2>Logout</h2>
+
+    
+      <p>You have successfully logged out.</p>
+      
+   
+
+    <a href="/home">Back to Home</a>
+  </div>
+</div>
+{% endblock %}

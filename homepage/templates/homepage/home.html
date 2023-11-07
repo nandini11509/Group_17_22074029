@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'homepage/css/home.css' %}"> <!-- Add your CSS file here -->
+    <title>Your Blood Bank Management</title>
+    <script src="{% static 'blood_bank/js/script.js'%}"></script>
+    <style>
+
+        
+    </style>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <div class="logo">
+                <div class="icon">
+                <i class="fa-solid fa-droplet"></i>
+                <i class="fa-solid fa-droplet"></i>
+                <i class="fa-solid fa-droplet"></i>
+                </div>
+                <div class="name-border">
+                    <span class="name">BloodBanks Management</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+
+                <li><i class="fa-solid fa-building"></i><a href="{% url 'login_b'%}">Blood Bank Login</a></li>
+                <li> <i class="fa-solid fa-building"></i> <a href="{% url 'blood_bank_register' %}">Blood Bank Register</a></li>
+                <li> <i class="fa-solid fa-user"></i> <a href="{% url 'login_users' %}">User Login</a></li>
+                <li> <i class="fa-solid fa-user"></i> <a href="{% url 'register_user' %}">User Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="second">
+        <ul>
+            <li><a href="{% url 'show_blood_banks' %}">Looking for Blood?</a></li>
+            <li><a href="{% url 'login_users' %}">Want to Donate Blood?</a></li>
+        </ul>
+    </div>
+    <div class="background-div">
+        <!-- Your content goes here -->
+        <!-- <div class="overlay-div">
+            <p>This is some text on a pastel pink background.</p>
+        </div> -->
+    </div>
+    <div class="icon-container">
+        <div class="icon-item">
+            <img src="{% static 'homepage/img/benefits_of_donating_blood.jpeg' %}" alt="Benefits Of Donating Blood"><br>
+            <a href="#benefits-section">
+            <span>Benefits Of Donating Blood</span></a>
+        </div>
+        <div class="icon-item">
+            <img src="{% static 'homepage/img/about_us.jpeg' %}" alt="About Us"><br>
+            <a href="#">
+            <span>About Us</span></a>
+        </div>
+        <div class="icon-item">
+            <img src="{% static 'homepage/img/blood_availability.jpeg' %}" alt="Check Blood Availability"><br>
+            <a href="/users/bloodbanklist">
+            <span>Check Blood Availability</span></a>
+        </div>
+        <div class="icon-item">
+            <img src="{% static 'homepage/img/precautions.jpeg' %}" alt="Your Image"><br>
+            <a href="#elegibility">
+            <span>Eligibilty and precautions</span></a>
+        </div>
+    </div>
+    <div class="container" id ="benefits-section" style="background-size: cover;">
+        <h1>Benefits of donating blood</h1>
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="box neuromorphic" style="background-color: #d0f2ec;">
+                    <ul class="list-group benefits-list" >
+                        <li class="list-group-item">Saving Lives</li>
+                        <li class="list-group-item">Helping Those in Need</li>
+                        <li class="list-group-item">Reduces the Risk of Heart Disease</li>
+                        <li class="list-group-item">Cancer Risk Reduction</li>
+                        <li class="list-group-item">Free Health Check-up</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box neuromorphic" style="background-color: #d0f2ec;">
+                    
+                    <ul class="list-group benefits-list">
+                        <li class="list-group-item">Stimulates Blood Cell Production</li>
+                        <li class="list-group-item">Weight Management</li>
+                        <li class="list-group-item">Promotes Community Bonding</li>
+                        <li class="list-group-item">Reduces Iron Overload</li>
+                        <li class="list-group-item">A Sense of Fulfillment</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box neuromorphic"  style="background-color: #d0f2ec;">
+                    <ul class="list-group benefits-list">
+                        <li class="list-group-item">No Cost to the Donor</li>
+                        <li class="list-group-item">Good for Psychological Well-Being</li>
+                        <li class="list-group-item">Helps in Emergency Situations</li>
+                        <li class="list-group-item">Contributes to Medical Research</li>
+                        <li class="list-group-item">Raises Awareness</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container" id="elegibility">
+        <h2>Donor Eligibility and Precautions</h2>
+        <div class="box neuromorphic" >
+        <h3>Eligibility Criteria</h3>
+        <p>
+          To be eligible to donate blood, individuals must meet the following criteria:
+        </p>
+        <ul>
+          <li>Be at least 18 years old (age requirements may vary by region).</li>
+          <li>Weigh at least 110 pounds (50 kg).</li>
+          <li>Be in good general health and feeling well on the day of donation.</li>
+          <li>Have a valid photo ID, such as a driver's license or passport.</li>
+          <li>Meet specific health and travel-related eligibility criteria, including recent international travel and medical conditions. Please consult with our staff for detailed information.</li>
+        </ul>
+    </div>
+    <div class="box neuromorphic" >
+        <h3>Precautions for Donors</h3>
+        <p>
+          Donors should take the following precautions before and after donating blood:
+        </p>
+        <ul>
+          <li>Get a good night's sleep before the donation.</li>
+          <li>Eat a healthy, balanced meal at least 3 hours before the donation, and drink plenty of water to stay hydrated.</li>
+          <li>Avoid alcohol consumption for at least 24 hours before donating blood.</li>
+          <li>Avoid strenuous physical activities for the rest of the day after donation.</li>
+          <li>If you experience any unusual symptoms after donation, such as dizziness or nausea, inform the staff immediately.</li>
+        </ul>
+      
+        <p>
+          Your safety and well-being are our top priorities, and we appreciate your willingness to contribute to this life-saving cause. If you have any concerns or questions about eligibility or precautions, please don't hesitate to contact our team for guidance.
+        </p>
+    </div>
+</div>
+    <div class="container" >
+        <h2 style="background-color: pastelpink; padding: 10px;">Donor Eligibility and Precautions</h2>
+      
+        <h3 style="background-color: pastelpink; padding: 5px;">Eligibility Criteria</h3>
+        <div class="box neuromorphic" style="background-color: #d0f2ec;">
+        <p style="background-color: pastelpink; padding: 5px;">
+          To be eligible to donate blood, individuals must meet the following criteria:
+        </p>
+        <ul style="background-color: pastelpink; padding: 5px;">
+          <li>Be at least 18 years old (age requirements may vary by region).</li>
+          <li>Weigh at least 110 pounds (50 kg).</li>
+          <li>Be in good general health and feeling well on the day of donation.</li>
+          <li>Have a valid photo ID, such as a driver's license or passport.</li>
+          <li>Meet specific health and travel-related eligibility criteria, including recent international travel and medical conditions. Please consult with our staff for detailed information.</li>
+        </ul>
+    </div>
+    <div class="box neuromorphic" >
+    
+        <h3 style="background-color: pastelpink; padding: 5px;">Precautions for Donors</h3>
+        <p style="background-color: pastelpink; padding: 5px;">
+          Donors should take the following precautions before and after donating blood:
+        </p>
+        <ul style="background-color: pastelpink; padding: 5px;">
+          <li>Get a good night's sleep before the donation.</li>
+          <li>Eat a healthy, balanced meal at least 3 hours before the donation, and drink plenty of water to stay hydrated.</li>
+          <li>Avoid alcohol consumption for at least 24 hours before donating blood.</li>
+          <li>Avoid strenuous physical activities for the rest of the day after donation.</li>
+          <li>If you experience any unusual symptoms after donation, such as dizziness or nausea, inform the staff immediately.</li>
+        </ul>
+    </div>
+    <div class="box neuromorphic" >
+        <p style="background-color: pastelpink; padding: 5px;">
+          Your safety and well-being are our top priorities, and we appreciate your willingness to contribute to this life-saving cause. If you have any concerns or questions about eligibility or precautions, please don't hesitate to contact our team for guidance.
+        </p>
+      </div>
+    </div>
+      
+</body>
+</html>

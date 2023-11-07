@@ -1,0 +1,80 @@
+
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'users/css/profile.css' %}">
+</head>
+<body>
+    
+    <div class="navbar">
+        <nav>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <div class="logo">
+                <span style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776; </span>
+                <div class="icon">
+                <i class="fa-solid fa-droplet"></i>
+                <i class="fa-solid fa-droplet"></i>
+                <i class="fa-solid fa-droplet"></i>
+                </div>
+                <div class="name-border">
+                  <a href="/home" style="text-decoration: none;">
+                    <span class="name" >BloodBanks Management</span></a>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li> <i class="fa-solid fa-user"></i> <a href="/users/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="{% url 'profile_user' %}">Profile</a>
+        <a href="{% url 'create_donation_request' %}">Donate Blood</a>
+        <a href="{% url 'submit_blood_request' %}">Request Blood</a>
+        <a href="{% url 'user_past_requests' %}">Users Past Blood Requests</a>
+    </div>
+<div class="container-fluid">
+    <div class="row" style="height: 100vh; display: flex; align-items: center;left: 50%;width: 50%;">
+        <div class="col-md-4 bg-light" style="padding: 0; width: 40%">
+
+        </div>
+        <div class="col-md-6 bg-profile" style="position: relative; width: 60%">
+            <div class="overlay" style="position: absolute; top: 50%; left: 100%; transform: translate(-50%, -50%); width: 120%; background-color: rgb(217,96,118,0.4);; padding: 40px; display: flex; flex-direction: column;">
+                <div class="profile-details" style="margin-bottom: 20px;">
+                    <h2 style="text-align: center; color:#d96076">User Profile</h2>
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li><strong>Name:</strong> {{ user_profile.name }}</li>
+                        <li><strong>Gender:</strong> {{ user_profile.gender }}</li>
+                        <li><strong>Contact Number:</strong> {{ user_profile.contact_num }}</li>
+                        <li><strong>Email:</strong> {{ user_profile.email_id }}</li>
+                        <li><strong>State:</strong> {{ user_profile.state }}</li>
+                        <li><strong>District:</strong> {{ user_profile.district }}</li>
+                        <li><strong>Address:</strong> {{ user_profile.address }}</li>
+                        <li><strong>Pincode:</strong> {{ user_profile.pincode }}</li>
+                        <li><strong>Credits:</strong> {{ user_profile.credits }}</li>
+                        <li><strong>Blood Group:</strong> {{ user_profile.blood_group }}</li>
+                    </ul>
+                </div>
+                <div style="display: flex; justify-content: space-around;">
+                    <a href="{% url 'update_profile' %}" style="text-decoration: none;"><button style="padding: 10px 20px; border: none; background-color: #4CAF50; color: white; border-radius: 5px; cursor: pointer;" onmouseover="this.style.backgroundColor='#45a049'" onmouseout="this.style.backgroundColor='#4CAF50'">Update</button></a>
+                    <a href="{% url 'delete_account' %}" style="text-decoration: none;"><button style="padding: 10px 20px; border: none; background-color: #f44336; color: white; border-radius: 5px; cursor: pointer;" onmouseover="this.style.backgroundColor='#d32f2f'" onmouseout="this.style.backgroundColor='#f44336'">Delete</button></a>
+                </div>
+                <ul>
+                    Donate blood to increase your credits, and avail amazing discounts!
+                </ul>
+                </div>
+        </div>
+    </div>
+</div>
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
+</body>
+</html>
+
